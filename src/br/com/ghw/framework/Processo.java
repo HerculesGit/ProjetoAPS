@@ -4,6 +4,8 @@ public class Processo {
 	private String pid;
 	private int tempoInicio;
 	private int tempoExec;
+	private int tempoAtual;
+	StatusProcesso meuStatus;
 
 	public Processo() {
 		// TODO Auto-generated constructor stub
@@ -13,6 +15,7 @@ public class Processo {
 		this.pid = pid;
 		this.tempoInicio = tempoInicio;
 		this.tempoExec = tempoExec;
+		this.tempoAtual = 0;
 	}
 
 	public String getPid() {
@@ -39,5 +42,11 @@ public class Processo {
 		this.tempoExec = tempoExec;
 	}
 	
+	public void setTempoAtual(int tempoAtual) {
+		this.tempoAtual = tempoAtual;
+	}
 
+	public int getTempoAtual() {
+		return tempoAtual;
+	}
 }

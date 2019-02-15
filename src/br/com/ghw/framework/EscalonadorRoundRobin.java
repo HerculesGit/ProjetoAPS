@@ -29,4 +29,16 @@ public class EscalonadorRoundRobin extends Escalonador {
 		return null;
 	}
 	
+	public void salvaContexto() {
+		// avançar o quantum
+		quantum+=1;
+		
+		// verificar qual o processo atual
+		//fila
+		
+		
+		
+		
+	}
+	
 }

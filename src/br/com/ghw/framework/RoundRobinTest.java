@@ -16,15 +16,16 @@ public class RoundRobinTest {
 			P4 NNWWWWRRF
 		 */
 		
-		EscalonadorRoundRobin comp = new EscalonadorRoundRobin(3);
-		comp.addProcesso("P1", 0, 1);
-		comp.addProcesso("P2", 0, 2);
-		comp.addProcesso("P3", 0, 6);
-		comp.addProcesso("P4", 3, 2);
+		EscalonadorRoundRobin escalonador = new EscalonadorRoundRobin(3);
+		escalonador.addProcesso("P1", 0, 1);
+		escalonador.addProcesso("P2", 0, 2);
+		escalonador.addProcesso("P3", 0, 6);
+		escalonador.addProcesso("P4", 3, 2);
 		
-		TabelaResultante tabela = comp.rodar();
-		assertEquals(StatusProcesso.Executando, comp.checarStatus("P1", 0));
+		TabelaResultante tabela = escalonador.rodar();
+		assertEquals(StatusProcesso.Executando, escalonador.checarStatus("P1", 0));
 		assertEquals("P1 RF\n", tabela.linhaProcesso("P1"));
+		
 		assertEquals("P1 RF\n" + 
 				"P2 WRRF\n" + 
 				"P3 WWWRRRWWRRRF\n" + 
